@@ -54,7 +54,7 @@ import PIL
 # file_url = "https://blobcdn.same.energy/b/f3/f1/f3f13a482a241d15b0571b9b4281f20c5d5f3755"#@param {type:"string"}
 # !wget "$file_url" -O /content/input.jpg -q
 # filename = "/content/input.jpg"
-def classify(filename):
+def classify(filename, return_raw=False):
     im_enc = perceptor.encode_image(preprocess(Image.open(filename)).unsqueeze(0).to("cpu"))
     distances = [torch.cosine_similarity(e, im_enc).item() for e in c_encs]
     # print("#"*30)
@@ -69,4 +69,7 @@ def classify(filename):
     # hsize = int((float(image.size[1]) * float(width_percent)))
     # image = image.resize((base_width, hsize), PIL.Image.ANTIALIAS)
     # display.display(display.Image(image))
-    return categories[int(distances.index(max(distances)))]
+    if(return_raw==False):
+        return categories[int(distances.index(max(distances)))]
+    else:
+        return distances
