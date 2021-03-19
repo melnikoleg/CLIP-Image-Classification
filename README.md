@@ -9,7 +9,7 @@ from classify import load, classify
 
 filename = "/content/input.jpg"
 
-load_categories = "imagenet" #valid categories include["imagenet", "dog vs cat", "pokemon", "words in the communist manifesto"] or you can use a list of your own categories
+load_categories = "imagenet"
 
 print("loading categories")
 load(load_categories)
