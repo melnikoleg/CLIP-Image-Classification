@@ -56,7 +56,7 @@ else:
 
 ```
 
-If you're using a conda environment, be sure to use `conda install cudatoolkit` and at the time of writing this, the command for installing the correct torch version would be
+If you're using a conda environment (outside of google colab), make sure you have an nvidea graphics card, once you've `conda activate`ed your environment, use `conda install cudatoolkit` and at the time of writing this, the command for installing the correct torch version would be
 
 ```
 pip install torch==1.7.1 torchvision==0.8.2 -f https://download.pytorch.org/whl/torch_stable.html ftfy regex
