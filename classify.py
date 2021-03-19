@@ -21,7 +21,7 @@ def load(categorylist):
     global categories
     load_categories = categorylist #@param ["imagenet", "dog vs cat", "pokemon", "words in the communist manifesto", "other (open this cell and write them into a list of strings)"]
     # filename=sys.argv[2]
-    if(load_categories not in ["imagenet", "dog vs cat", "pokemon", "words in the communist manifesto", "other (open this cell and write them into a list of strings)"]):
+    if(load_categories not in ["emojis", "imagenet", "dog vs cat", "pokemon", "words in the communist manifesto", "other (open this cell and write them into a list of strings)"]):
         # print("The only supported categories currently are: ")
         # print(["imagenet", "dog vs cat", "pokemon", "words in the communist manifesto"])
         categories = categorylist
@@ -46,6 +46,8 @@ def load(categorylist):
                 categories.append(i)
     elif(load_categories=="emojis"):
         categories = open("categories/emojis.txt", "r").readlines()
+        # print("loaded emojis")
+        # print(categories)
     # encode categories with clip
     c_encs = [perceptor.encode_text(clip.tokenize(category).cuda()).detach().clone() for category in categories]
 
