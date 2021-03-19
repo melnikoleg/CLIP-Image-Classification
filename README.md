@@ -62,4 +62,6 @@ If you're using a conda environment (outside of google colab), make sure you hav
 pip install torch==1.7.1 torchvision==0.8.2 -f https://download.pytorch.org/whl/torch_stable.html ftfy regex
 ```
 
+if you try the script and it says there are dependencies missing, usually a `pip install [dependency name]` will fix it
+
 👍 - [Chloe](https://github.com/kingchloexx)
