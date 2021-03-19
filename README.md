@@ -20,7 +20,7 @@ print(classify(filename))
 
 
 
-#### load_categories
+#### Valid Categories for `load`
 
 ```python
 load("imagenet") #imagenet categories
