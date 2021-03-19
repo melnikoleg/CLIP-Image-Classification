@@ -30,7 +30,7 @@ print(classify(filename))
 load("imagenet") #imagenet categories
 load("pokemon") #loads a list of 721 pokemon names as categories
 load("dog vs cat") #dog and cat as categories
-load("words in the communist manifesto") #speaks for itself
+load("emojis") #emojis :)
 load(["banana", "elephant", "monkey"]) #any custom words in a list will do as well
 ```
 
