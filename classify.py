@@ -44,6 +44,8 @@ def load(categorylist):
         for i in ccc:
             if i not in categories:
                 categories.append(i)
+    elif(load_categories=="emojis"):
+        categories = open("categories/emojis.txt", "r").readlines()
     # encode categories with clip
     c_encs = [perceptor.encode_text(clip.tokenize(category).cuda()).detach().clone() for category in categories]
 
