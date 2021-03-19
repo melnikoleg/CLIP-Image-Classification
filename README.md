@@ -30,7 +30,7 @@ load("words in the communist manifesto") #speaks for itself
 load(["banana", "elephant", "monkey"]) #any custom words in a list will do as well
 ```
 
-### Use of `classify`
+#### Use of `classify`
 ```python
 classify(filename) #returns the highest scoring class
 classify(filename, return_raw=True) #returns the scores for all the classes (cosine_similarity)
