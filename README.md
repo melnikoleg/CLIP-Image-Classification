@@ -62,6 +62,4 @@ If you're using a conda environment (outside of google colab), make sure you hav
 pip install torch==1.7.1 torchvision==0.8.2 -f https://download.pytorch.org/whl/torch_stable.html ftfy regex
 ```
 
-as (at the current time) conda installs cuda 10.2.8 when using `conda install cudatoolkit`
-
-👍
+👍 - [Chloe](https://github.com/kingchloexx)
