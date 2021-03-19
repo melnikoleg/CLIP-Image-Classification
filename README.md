@@ -5,7 +5,7 @@
 ### Use
 
 ```python
-!git clone https://github.com/kingchloexx/CLIP-Image-Classification # if not in a notebook, run in console
+!git clone https://github.com/kingchloexx/CLIP-Image-Classification # if not in a notebook, run in console (w/o the "!")
 import os
 os.chdir("Image-Classification")
 
