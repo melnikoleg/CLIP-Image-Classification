@@ -9,13 +9,24 @@ from classify import load, classify
 
 filename = "/content/input.jpg"
 
-load_categories = "imagenet" #valid categories include["imagenet", "dog vs cat", "pokemon", "words in the communist manifesto"]
+load_categories = "imagenet" #valid categories include["imagenet", "dog vs cat", "pokemon", "words in the communist manifesto"] or you can use a list of your own categories
 
 print("loading categories")
 load(load_categories)
 
 print("classifying")
 print(classify(filename))
+```
+
+
+
+#### load_categories
+
+```python
+load("imagenet") #imagenet categories
+load("dog vs cat") #dog and cat as categories
+load("words in the communist manifesto") #speaks for itself
+load(["banana", "elephant", "monkey"]) #any custom words in a list will do as well
 ```
 
 
