@@ -5,9 +5,13 @@
 ### Use
 
 ```python
+!git clone https://github.com/kingchloexx/CLIP-Image-Classification # if not in a notebook, run in console
+import os
+os.chdir("Image-Classification")
+
 from classify import load, classify
 
-filename = "/content/input.jpg"
+filename = "../input.jpg"
 
 load_categories = "imagenet"
 
