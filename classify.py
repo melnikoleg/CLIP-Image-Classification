@@ -11,9 +11,6 @@ import glob
 import clip
 perceptor, preprocess = clip.load('ViT-B/32')
 import sys
-# create categories
-
-# load imagenet categories
 c_encs=[]
 categories = []
 def load(categorylist):
@@ -46,33 +43,14 @@ def load(categorylist):
                 categories.append(i)
     elif(load_categories=="emojis"):
         categories = open("categories/emojis.txt", "r").readlines()
-        # print("loaded emojis")
-        # print(categories)
-    # encode categories with clip
     c_encs = [perceptor.encode_text(clip.tokenize(category).cuda()).detach().clone() for category in categories]
 
 
-#@title classify
 import PIL
-# encode image and classify
-# file_url = "https://blobcdn.same.energy/b/f3/f1/f3f13a482a241d15b0571b9b4281f20c5d5f3755"#@param {type:"string"}
-# !wget "$file_url" -O /content/input.jpg -q
-# filename = "/content/input.jpg"
 def classify(filename, return_raw=False):
     im_enc = perceptor.encode_image(preprocess(Image.open(filename)).unsqueeze(0).to("cpu"))
     distances = [torch.cosine_similarity(e, im_enc).item() for e in c_encs]
-    # print("#"*30)
-    # print("Category: ",categories[int(distances.index(max(distances)))])
-    # print("#"*30)
-    # display.display(display.Image(filename))
 
-    # resize image to fit in console better
-    # base_width = 360
-    # image = Image.open(filename)
-    # width_percent = (base_width / float(image.size[0]))
-    # hsize = int((float(image.size[1]) * float(width_percent)))
-    # image = image.resize((base_width, hsize), PIL.Image.ANTIALIAS)
-    # display.display(display.Image(image))
     if(return_raw==False):
         return categories[int(distances.index(max(distances)))]
     else:
