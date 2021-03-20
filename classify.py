@@ -9,7 +9,7 @@ import subprocess
 InteractiveShell.ast_node_interactivity = "all"
 import glob
 import clip
-perceptor, preprocess = clip.load('ViT-B/32')   
+perceptor, preprocess = clip.load('ViT-B/32')
 import sys
 # create categories
 
@@ -77,3 +77,9 @@ def classify(filename, return_raw=False):
         return categories[int(distances.index(max(distances)))]
     else:
         return distances
+def encode(object):
+    o = object.lower()
+    if("jpg" in o[-5:]) or ("png" in o[-5:]) or ("jpeg" in o[-5:]):
+        return perceptor.encode_image(preprocess(Image.open(object)).unsqueeze(0).to("cpu"))
+    else:
+        return perceptor.encode_text(clip.tokenize(object).cuda()).detach().clone()
