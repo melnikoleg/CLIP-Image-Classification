@@ -45,7 +45,7 @@ classify(filename, return_raw=True) #returns the scores for all the classes (cos
 this will return CLIP's raw encoding of an image or text if you need it.
 
 ```python
-encode("input.jpg") #encode based on filename, it'll be detected if it's a png,jpg, or jpeg
+encode("input.jpg") #encode based on filename, it'll be detected if it's a png, jpg, or jpeg
 encode("an image of a flower") #encode based on text, detected as text by function
 ```
 
