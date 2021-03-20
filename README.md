@@ -9,7 +9,7 @@
 import os
 os.chdir("Image-Classification")
 
-from classify import load, classify
+from classify import load, classify, encode
 
 filename = "../input.jpg"
 
@@ -39,6 +39,19 @@ load(["banana", "elephant", "monkey"]) #any custom words in a list will do as we
 classify(filename) #returns the highest scoring class
 classify(filename, return_raw=True) #returns the scores for all the classes (cosine_similarity)
 ```
+
+#### `encode`
+
+this will return CLIP's raw encoding of an image or text if you need it.
+
+```python
+encode("input.jpg") #encode based on filename, it'll be detected if it's a png,jpg, or jpeg
+encode("an image of a flower") #encode based on text, detected as text by function
+```
+
+
+
+
 
 ### Dependencies
 
