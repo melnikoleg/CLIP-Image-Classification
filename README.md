@@ -1,6 +1,6 @@
 # CLIP-Image-Classification
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kingchloexx/CLIP-Image-Classification/blob/main/Multi_Domain_Pretrained_Classifier_with_CLIP.ipynb)
+
 
 ### Use
 
@@ -51,7 +51,11 @@ encode("an image of a flower") #encode based on text, detected as text by functi
 
 
 
+### Examples
 
+Classify an image: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kingchloexx/CLIP-Image-Classification/blob/main/Multi_Domain_Pretrained_Classifier_with_CLIP.ipynb)
+
+Search within an image: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kingchloexx/CLIP-Image-Classification/blob/main/Clip_Search.ipynb)
 
 ### Dependencies
 
